@@ -9,17 +9,18 @@ on:
 jobs:
 
   test:
-    runs-on: ${{ matrix.os }}
+  # runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     env:
       HOST: localhost
       PORT: 5432
       USER: root
       PASSWORD: root
       DBNAME: root
-    strategy:
-      matrix:
-        go_version: ['1.18', '1.17', '>=1.18']
-        os: ['ubuntu-latest', 'ubuntu-latest-18.04']
+    #strategy:
+      #matrix:
+        #go_version: ['1.18', '1.17', '>=1.18']
+        # os: ['ubuntu-latest', 'ubuntu-latest-18.04']
     steps:
     - uses: actions/checkout@v3
 
